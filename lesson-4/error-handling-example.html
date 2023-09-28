@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+    <script>
+
+        const getPosts = async () => {
+            try {
+            const posts = await axios.get("https://jsonplaceholder.typicode.com/posts2");
+                // throw new Error("")
+                console.log(posts);
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+
+        getPosts()
+
+
+        const calcWeightIndex = (weight, height) => {
+            if (weight <= 0) {
+                throw new Error("weight cannot be 0 or less")
+            }
+
+            if (height <= 0) {
+                throw new Error("weight cannot be 0 or less")
+            }
+
+            const result = (weight / (height ** 2)).toFixed(2);
+            return Number(result);
+        }
+
+        // const weightIndex = calcWeightIndex(90, 0);
+        // console.log(weightIndex);
+        // conosle.log("Afte weightIndex calc")
+    </script>
+</body>
+
+</html>
